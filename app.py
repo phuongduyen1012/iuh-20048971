@@ -13,19 +13,19 @@ import firebase_admin
 from firebase_admin import credentials, firestore
 
 # TẢI DỮ LIỆU TỪ FIRESTORE
-# cred = credentials.Certificate(
-#     "./iuh-20012011-ebc8f-firebase-adminsdk-mt3xf-48fec9d604.json")
-# appLoadData = firebase_admin.initialize_app(cred)
+cred = credentials.Certificate(
+    "./iuh-20012011-9c4a4-firebase-adminsdk-1n3e9-b6cecda966.json")
+appLoadData = firebase_admin.initialize_app(cred)
 
-# dbFireStore = firestore.client()
+dbFireStore = firestore.client()
 
-# queryResults = list(dbFireStore.collection(
-#     u'tbl-20012011').stream())
-# listQueryResult = list(map(lambda x: x.to_dict(), queryResults))
+queryResults = list(dbFireStore.collection(
+    u'tbl-20012011').stream())
+listQueryResult = list(map(lambda x: x.to_dict(), queryResults))
 
-# df = pd.DataFrame(listQueryResult)
+df = pd.DataFrame(listQueryResult)
 
-df = pd.read_csv('orginal_sales_data_edit.csv', encoding='utf-8', header=0)
+# df = pd.read_csv('orginal_sales_data_edit.csv', encoding='utf-8', header=0)
 
 df["YEAR_ID"] = df["YEAR_ID"].astype("str")
 df["QTR_ID"] = df["QTR_ID"].astype("str")
