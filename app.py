@@ -14,13 +14,13 @@ from firebase_admin import credentials, firestore
 
 # TẢI DỮ LIỆU TỪ FIRESTORE
 cred = credentials.Certificate(
-    "./iuh-20012011-9c4a4-firebase-adminsdk-1n3e9-b6cecda966.json")
+    "./iuh-20048971-firebase-adminsdk-datxn-bc3a5e4a0a.json")
 appLoadData = firebase_admin.initialize_app(cred)
 
 dbFireStore = firestore.client()
 
 queryResults = list(dbFireStore.collection(
-    u'tbl-20012011').stream())
+    u'tbl20048971').stream())
 listQueryResult = list(map(lambda x: x.to_dict(), queryResults))
 
 df = pd.DataFrame(listQueryResult)
@@ -82,7 +82,7 @@ app.layout = html.Div(
                     "XÂY DỰNG SẢN PHẨM DANH MỤC TIỀM NĂNG", className="header-title"
                 ),
                 html.H3(
-                    "IUH - DHHTTT16A - 20012011 - NGUYỄN THỊ LÊ", className="header-title"
+                    "IUH - DHHTTT16A - 20048971 - BÙI NGUYỄN PHƯƠNG DUYÊN", className="header-title"
                 )
             ],
             className="header",
