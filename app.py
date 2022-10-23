@@ -45,10 +45,10 @@ sales = sum(df['SALES'])
 profit = sum(df['PROFIT'])
 
 # top doanh số
-topSales = df['SALES'].max()
+topSales = df.groupby('CATEGORY').sum()['SALES'].max()
 
 # top lợi nhuận
-topProfit = df['PROFIT'].max()
+topProfit = round(df.groupby('CATEGORY').sum()['PROFIT'].max(), 2)
 
 # bar chart doanh số từng năm
 data1 = df.groupby(['YEAR_ID']).sum('SALES').reset_index()
